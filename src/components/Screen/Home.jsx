@@ -2,6 +2,7 @@ import React from "react";
 import ModernNavbar from "../Navbar/navbar";
 import ProfileCard from "../Profile/ProfileCard";
 import MessageCard from "../Messages/MessageCard";
+import PremiumMessageCard from "../Premium/PremiumMessageCard";
 
 const Home = () => {
   return (
@@ -22,6 +23,13 @@ const Home = () => {
           {/* Message section under navbar */}
           <div className="w-full px-4 mt-24">
             <MessageCard />
+          </div>
+          <div className="w-full px-8 mt-10">
+            <PremiumMessageCard
+              name="Anushka"
+              preview="Hey! I just unlocked premium 😉"
+              time="1m"
+            />
           </div>
         </div>
 
