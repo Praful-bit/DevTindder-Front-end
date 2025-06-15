@@ -47,7 +47,15 @@ export default function ConnectionRequestsPage() {
   };
 
   return (
-    <div className="min-h-screen text-white pt-24 bg-gradient-to-br from-[#180038] via-[#310062] to-[#4f0d86]">
+   <div className="min-h-screen bg-gradient-to-br from-purple-900 via-black to-purple-800 pt-24">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/3 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/3 w-56 h-56 sm:w-80 sm:h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+      </div>
+
       {/* Back Button */}
       <button
         onClick={() => navigate("/home")}

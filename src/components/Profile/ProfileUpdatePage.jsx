@@ -21,19 +21,18 @@ const ProfileUpdatePage = () => {
   const [error, setError] = useState(null);
   const [success, setSuccess] = useState(false);
 
- const [formData, setFormData] = useState({
-  firstName: "",
-  lastName: "",
-  emailId: "",
-  dob: "", 
-  gender: "",
-  about: "",
-  skills: ["JavaScript", "React"],
-  linkDinUrl: "", 
-  gitHubUrl: "",
-  imageUrl: null, 
-});
-
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    emailId: "",
+    dob: "",
+    gender: "",
+    about: "",
+    skills: ["JavaScript", "React"],
+    linkDinUrl: "",
+    gitHubUrl: "",
+    imageUrl: null,
+  });
 
   const navigate = useNavigate();
   const [newSkill, setNewSkill] = useState("");
@@ -81,7 +80,7 @@ const ProfileUpdatePage = () => {
       const res = axios.patch(`${API_URL}/profile/edit`, formData, {
         withCredentials: true,
       });
-      navigate("/profile")
+      navigate("/profile");
     } catch (err) {
       console.log(err);
     }
@@ -95,15 +94,21 @@ const ProfileUpdatePage = () => {
   ];
 
   return (
-    <div className="min-h-screen  bg-gradient-to-br from-[#180038] via-[#310062] to-[#4f0d86] py-8 px-4">
+    // <div className="min-h-screen  bg-gradient-to-br from-[#180038] via-[#310062] to-[#4f0d86] py-8 px-4">
+    <div className="min-h-screen bg-gradient-to-br from-purple-900 via-black to-purple-800 py-8 px-4">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-10 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 to-transparent"></div>
+        <div className="absolute top-0 left-0 w-48 h-48 sm:w-96 sm:h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/3 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-purple-700 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-2000"></div>
+        <div className="absolute bottom-0 left-1/3 w-56 h-56 sm:w-80 sm:h-80 bg-purple-400 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse animation-delay-4000"></div>
+      </div>
+
       <div className="max-w-4xl mx-auto">
         {/* Header */}
         <div className="flex items-center gap-4 mb-8">
-          <button className="p-2 rounded-lg bg-purple-500/20 text-purple-300 hover:bg-purple-500/30 transition-colors">
-            <ArrowLeft size={20} onClick={() => navigate("/profile")} />
-          </button>
-          <div>
-            <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+          <div className="pl-1">
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent ">
               Update Profile
             </h1>
             <p className="text-purple-300 mt-1">
@@ -360,10 +365,10 @@ const ProfileUpdatePage = () => {
           <div className="flex justify-end gap-4">
             <button
               type="button"
-              onClick={()=>navigate("/profile")}
+              onClick={() => navigate("/profile")}
               className="px-8 py-4 rounded-xl text-purple-300 border border-purple-500/30 hover:bg-purple-500/10 transition-all duration-300"
             >
-              Cancel
+              Back
             </button>
             <button
               type="button"
